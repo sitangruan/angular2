@@ -8,5 +8,5 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.less'
 })
 export class App {
-  protected readonly title = signal('angular2');
+  protected readonly title = signal('Sitang\'s angular2');
 }
