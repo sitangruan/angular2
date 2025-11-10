@@ -1,12 +1,15 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+// import { RouterOutlet } from '@angular/router';
+import { sitangImagePath, linkedInUrl, sourceCodesUrl } from '../common/constants';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  // imports: [RouterOutlet],
   templateUrl: './app.html',
-  styleUrl: './app.less'
+  styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('Sitang\'s angular2');
+  sitangImagePath = sitangImagePath;
+  linkedInUrl = linkedInUrl;
+  sourceCodesUrl = sourceCodesUrl;
 }

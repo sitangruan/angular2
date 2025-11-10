@@ -1,0 +1,6 @@
+/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+body {
+  @apply m-0 p-0 box-border font-sans bg-white text-black;
+}
