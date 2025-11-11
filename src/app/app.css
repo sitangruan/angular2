@@ -1,21 +1,29 @@
 @import "tailwindcss";
 
-header {
-  @apply flex max-md:flex-col items-center justify-between items-center border-b-1 border-slate-500 pl-5 font-bold w-full h-20 max-md:h-18 max-md:justify-around box-border bg-gradient-to-br from-blue-200 to-[#F0F2F7];
+:host {
+  @apply flex flex-col h-screen w-screen box-border;
 
-  .title-part {
-      @apply flex items-center;
+  header {
+    @apply flex max-md:flex-col items-center justify-between items-center border-b-1 border-slate-500 pl-5 font-bold w-full h-20 max-md:h-18 max-md:justify-around box-border bg-gradient-to-br from-blue-200 to-[#F0F2F7];
 
-      img {
-          @apply w-10 cursor-pointer;
-      }
+    .title-part {
+        @apply flex items-center;
 
-      .title {
-          @apply text-3xl max-md:text-xl;
-      }
+        img {
+            @apply w-10 cursor-pointer;
+        }
+
+        .title {
+            @apply text-3xl max-md:text-xl;
+        }
+    }
+
+    a {
+      @apply text-2xl max-md:text-base underline pr-4 text-blue-600 cursor-pointer;
+    }
   }
 
-  a {
-    @apply text-2xl max-md:text-base underline pr-4 text-blue-600 cursor-pointer;
+  main {
+    @apply flex h-[calc(100vh-80px)] max-md:h-[calc(100vh-60px)] max-md:flex-col w-full box-border;
   }
 }

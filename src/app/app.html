@@ -1,4 +1,4 @@
-<main>
+<div class="app-root-container">
   <header>
     <div class="title-part">
       <a [href]="linkedInUrl" target="_blank"><img [src]="sitangImagePath" alt="Sitang Ruan"></a>
@@ -8,4 +8,8 @@
       <a [href]="sourceCodesUrl" target="_blank">Source Codes on GitHub</a>
     </div>
   </header>
-</main>
+  <main>
+    <app-sidebar></app-sidebar>
+    <!-- <router-outlet></router-outlet> -->
+  </main>
+</div>

@@ -1,0 +1,17 @@
+  @import "tailwindcss";
+
+:host  {
+  @apply flex md:shrink-[0.3] flex-col max-md:flex-row max-md:w-full bg-gray-100 md:max-w-50 md:w-[10%] shadow-[0px_2px_6px_0px_rgba(60,_73,_112,_0.25)];
+
+  a {
+    @apply no-underline;
+  }
+
+  .menuItem {
+    @apply h-15 max-md:h-10 max-md:flex-1 cursor-pointer border-b-1 max-md:border-none max-md:text-base max-md:p-2 border-[#112442] text-xl flex justify-center items-center transition-all duration-300 ease-in-out;
+    &:hover, &.isFocused {
+      @apply bg-[#a9dbb6];
+    }
+  }
+}
+

@@ -3,10 +3,11 @@ This is demo project developed to prove the learning level of Angular. It covers
  1. Angular V20
  2. Typescript
  3. Tailwind
- 4. Angular routing
+ 4. Angular routing, route guard.
  5. Angular module, Angular component
- 6. Reactive form, validators.
- 7. Angular service, denpendency injection.
+ 6. Angular directives, render2.
+ 7. Reactive form, validators.
+ 8. Angular service, denpendency injection.
 
 
 To run on your local:
