@@ -6,4 +6,5 @@ export type NavigationLink = {
  parentRoute?: string,
  children?: NavigationLink[],
  canActivate?: (to: { params: { id: number } }) => boolean | void,
+ loadComponent: () => Promise<any>,
 }
