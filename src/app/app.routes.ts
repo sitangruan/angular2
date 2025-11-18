@@ -11,10 +11,17 @@ const populateRoutes = (links: NavigationLink[]): Routes => {
   }
 
   links.forEach(link => {
+    const childrenRoutes: Routes = [];
+    if (link.children && link.children.length > 0) {
+      const nestedRoutes = populateRoutes(link.children);
+      childrenRoutes.push(...nestedRoutes);
+    }
+
     routes.push({
       path: link.route,
       title: link.displayName,
       loadComponent: link.loadComponent,
+      children: childrenRoutes.length > 0 ? childrenRoutes : undefined,
     });
   });
 

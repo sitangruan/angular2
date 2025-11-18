@@ -18,7 +18,7 @@ export const routeList = [
     displayName: "Posts",
     route: "posts",
     isDefaultLink: false,
-    loadComponent: () => import('../app/posts/posts').then(m => {console.log('Loading Posts module', m); return m.Posts;}),
+    loadComponent: () => import('../app/posts/posts').then(m => m.Posts),
   },
   {
     id: 3,
@@ -26,33 +26,33 @@ export const routeList = [
     route: "users",
     isDefaultLink: true,
     loadComponent: () => import('../app/users/users').then(m => m.Users),
-    // children: [
-    //   {
-    //     id: 5,
-    //     displayName: "User-List",
-    //     route: "",
-    //     parentRoute: "users",
-    //     componentName: "UserList",
-    //     isDefaultLink: false,
-    //   } as NavigationLink,
-    //   {
-    //     id: 6,
-    //     displayName: "User-Details",
-    //     route: ":id",
-    //     parentRoute: "users",
-    //     componentName: "UserDetails",
-    //     isDefaultLink: false,
-    //     canActivate: (to: { params: { id: number } }) => {
-    //       if (!Number.isInteger(Number(to.params?.id)) || !(to.params?.id > 0)) {
-    //         alert("Invalid user ID. Please enter a valid integer greater than 0.");
-    //         return false;
-    //       }
+    children: [
+      {
+        id: 5,
+        displayName: "User list",
+        route: "",
+        parentRoute: "users",
+        isDefaultLink: false,
+        loadComponent: () => import('../app/users/user-list/user-list').then(m => m.UserList),
+      } as NavigationLink,
+      {
+        id: 6,
+        displayName: "User details",
+        route: ":id",
+        parentRoute: "users",
+        isDefaultLink: false,
+        loadComponent: () => import('../app/users/user-detail/user-detail').then(m => m.UserDetail),
+        canActivate: (to: { params: { id: number } }) => {
+          if (!Number.isInteger(Number(to.params?.id)) || !(to.params?.id > 0)) {
+            alert("Invalid user ID. Please enter a valid integer greater than 0.");
+            return false;
+          }
 
-    //       // If the id is a valid integer, allow navigation
-    //       return true; // Allow navigation
-    //     }
-    //   } as NavigationLink,
-    // ],
+          // If the id is a valid integer, allow navigation
+          return true; // Allow navigation
+        }
+      } as NavigationLink,
+    ],
   },
   {
     id: 4,
