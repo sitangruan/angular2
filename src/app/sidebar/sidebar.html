@@ -1,3 +1,5 @@
-<a *ngFor="let r of routeList; index as i; first as isFirst" [href]="r.route" class="menuItem" [class.isFocused]="r.isDefaultLink">
-  {{ r.displayName }}
-</a>
+@for (r of routeList; track r.id) {
+  <a [routerLink]="r.route" class="menuItem" routerLinkActive="isFocused">
+    {{ r.displayName }}
+  </a>
+}
