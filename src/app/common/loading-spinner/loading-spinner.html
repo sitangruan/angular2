@@ -1,0 +1,23 @@
+@if (isVisible()) {
+  <div
+    class="dialog-wrapper"
+    [ngClass]="{ 'not-transparent': !isMaskTransparent() }"
+  >
+    <div class="lds-spinner">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+} @else {
+  <div></div>
+}
