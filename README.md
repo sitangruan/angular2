@@ -8,6 +8,7 @@ This is demo project developed to prove the learning level of Angular. It covers
  6. Angular directives, render2.
  7. Reactive form, validators.
  8. Angular service, denpendency injection.
+ 9. HttpClient, observable
 
 
 To run on your local:
