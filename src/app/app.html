@@ -5,7 +5,7 @@
       <div class="title">Sitang Angular 2</div>
     </div>
     <div style="display: flex;">
-      <button style="text-decoration: underline; cursor: pointer;" (click)="showLoadingSpinner()">Show Loading Spinner for 3 seconds</button>
+      <button style="text-decoration: underline; cursor: pointer;" (click)="showLoadingSpinner()">Show Loading Spinner for 2 seconds</button>
       <input type="checkbox" id="maskTransparency" name="maskTransparency" [(ngModel)]="isMaskTransparent" style="margin-left: 10px;">
       <label for="maskTransparency" style="color:cadetblue; margin-left: 5px;">Mask Transparent</label>
     </div>
@@ -17,5 +17,5 @@
     <app-sidebar></app-sidebar>
     <router-outlet></router-outlet>
   </main>
-  <app-loading-spinner [isVisible]="displaySpinner" [isMaskTransparent]="isMaskTransparent"></app-loading-spinner>
+  <app-loading-spinner></app-loading-spinner>
 </div>

@@ -4,6 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { sitangImagePath, linkedInUrl, sourceCodesUrl } from '../common/constants';
 import { Sidebar } from './sidebar/sidebar';
 import { LoadingSpinner } from "./common/loading-spinner/loading-spinner";
+import { SpinnerService } from '../services/spinner-service';
 
 @Component({
   selector: 'app-root',
@@ -12,16 +13,26 @@ import { LoadingSpinner } from "./common/loading-spinner/loading-spinner";
   styleUrl: './app.css'
 })
 export class App {
+  constructor(private spinnerService: SpinnerService) {}
+
   sitangImagePath = sitangImagePath;
   linkedInUrl = linkedInUrl;
   sourceCodesUrl = sourceCodesUrl;
-  displaySpinner = false;
-  isMaskTransparent = true;
+
+  private _isMaskTransparent = true;
+  get isMaskTransparent(): boolean {
+    return this._isMaskTransparent;
+  }
+
+  set isMaskTransparent(value: boolean) {
+    this._isMaskTransparent = value;
+    this.spinnerService.setMaskTransparency(value);
+  }
 
   showLoadingSpinner() {
-    this.displaySpinner = true;
+    this.spinnerService.showSpinner();
     setTimeout(() => {
-      this.displaySpinner = false;
-    }, 3000); // Hide spinner after 3 seconds
+      this.spinnerService.hideSpinner();
+    }, 2000); // Hide spinner after 2 seconds
   }
 }
