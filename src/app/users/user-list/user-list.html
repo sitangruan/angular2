@@ -1,9 +1,91 @@
-<p>user-list works!</p>
-<br/>
-<button type="button" (click)="gotoUserDetail(123)">Go to User 123 Detail</button>
-<br/>
-<ul>
-  @for (user of users; track $index) {
-    <li *ngIf="$index < 10">{{ user.id }} - {{ user.name }} ({{ user.email }})</li>
+<div class="user-list-container">
+  <div class="header-row">
+    <div class="col-header col-name-header">
+      Name
+    </div>
+    <div class="col-header col-company-header">
+      Company
+    </div>
+    <div class="col-header col-email-header">
+      Email
+    </div>
+    <div class="col-header col-website-header">
+      Website
+    </div>
+    <div class="col-header col-phone-header">
+      Phone
+    </div>
+    <div class="col-header col-address-header">
+      Address
+    </div>
+  </div>
+  <div class="solid-rows-container">
+    @if (users && users.length > 0) {
+      @for (user of users; track $index) {
+        <div class="row" [ngClass]="{ 'odd-row': $index % 2 == 1 }">
+          <div class="col-data col-name-data">
+            {{ user.name }}
+          </div>
+          <div class="col-data col-company-data">
+            {{ user.company.name }}
+          </div>
+          <div class="col-data col-email-data">
+            {{ user.email }}
+          </div>
+          <div class="col-data col-website-data">
+            {{ user.website }}
+          </div>
+          <div class="col-data col-phone-data">
+            {{ user.phone }}
+          </div>
+          <div class="col-data col-address-data">
+            {{ user.address.street }}, {{ user.address.suite }}, {{ user.address.city }}, {{ user.address.zipcode }}
+          </div>
+        </div>
+      }
+    } @else {
+      <div class="empty-content">
+        No users available.
+      </div>
+    }
+  </div>
+</div>
+<div class="user-list-container-mobile">
+  @if (users && users.length > 0) {
+    @for (user of users; track $index) {
+      <div class="mobile-card" [ngClass]="{ 'odd-row': $index % 2 == 1 }">
+        <div class="card-row">
+          <div class="label">Name:</div>
+          <div class="value">{{ user.name }}</div>
+        </div>
+        <div class="card-row">
+          <div class="label">Company:</div>
+          <div class="value">{{ user.company.name }}</div>
+        </div>
+        <div class="card-row">
+          <div class="label">Email:</div>
+          <div class="value">{{ user.email }}</div>
+        </div>
+        <div class="card-row">
+          <div class="label">Website:</div>
+          <div class="value">{{ user.website }}</div>
+        </div>
+        <div class="card-row">
+          <div class="label">Phone:</div>
+          <div class="value">{{ user.phone }}</div>
+        </div>
+        <div class="card-row">
+          <div class="label">Address:</div>
+          <div class="value">
+            {{ user.address.street }}, {{ user.address.suite }}, {{ user.address.city }}, {{ user.address.zipcode }}
+          </div>
+        </div>
+      </div>
+    }
+  } @else {
+    <div class="empty-content">
+      No users available.
+    </div>
   }
-</ul>
+</div>
+

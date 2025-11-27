@@ -1,0 +1,5 @@
+@import 'tailwindcss';
+
+:host {
+  @apply block w-full h-full;
+}

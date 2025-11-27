@@ -1,9 +1,115 @@
 @import 'tailwindcss';
 
 :host {
-  @apply block p-4;
+  @apply block w-full h-full p-4;
 }
 
 button {
   @apply bg-blue-500 text-white font-bold py-2 px-4 rounded cursor-pointer;
 }
+
+
+  a, .goto-link {
+    @apply text-blue-500 hover:underline cursor-pointer;
+  }
+
+  .ellipsis-text {
+    @apply text-ellipsis overflow-hidden whitespace-nowrap;
+  }
+
+  .user-list-container {
+    @apply flex flex-col items-center w-full h-full overflow-y-auto hidden md:block;
+
+    .header-row {
+      @apply flex w-full justify-between gap-1 h-10 flex-[0_0_basis] shadow-[0px_2px_6px_0px_rgba(60,_73,_112,_0.25)];
+
+      .col-header {
+        @apply flex justify-center items-center cursor-pointer bg-gray-200 text-base;
+
+        .empty-icon {
+          @apply w-4 h-4 ml-3;
+        }
+
+        .sort-icon {
+          @apply flex w-4 h-4 ml-3 bg-cover;
+          background-image: url('/public/images/sorting.png');
+        }
+
+        .desc {
+          @apply rotate-[180deg];
+        }
+
+        .header-text {
+          @apply font-bold;
+        }
+      }
+    }
+
+    .col-name-data, .col-name-header, .col-phone-data, .col-phone-header {
+      @apply w-[12%];
+    }
+
+    .col-website-data, .col-website-header {
+      @apply w-[15%];
+    }
+
+    .col-company-data, .col-company-header {
+      @apply w-[16%];
+    }
+
+    .col-email-data, .col-email-header {
+      @apply w-[20%];
+    }
+
+    .col-address-data, .col-address-header {
+      @apply w-[25%];
+    }
+
+    .solid-rows-container {
+      @apply max-h-[calc(100vh-20rem)] min-h-75 overflow-y-auto;
+
+      .row {
+        @apply flex flex-1 h-10;
+
+        .col-data {
+          @apply flex h-8 items-center pl-4 inline-block overflow-hidden whitespace-nowrap text-ellipsis;
+
+          .ellipsis-text {
+            @apply inline-block overflow-hidden whitespace-nowrap text-ellipsis;
+          }
+        }
+      }
+
+      .row:hover {
+        @apply bg-[#0000001a];
+      }
+
+      .odd-row {
+        @apply bg-[#0000000a];
+      }
+    }
+  }
+
+  .user-list-container-mobile {
+    @apply flex flex-col items-center w-full h-[calc(100vh-15rem)] p-4 overflow-y-auto block md:hidden;
+
+    .mobile-card {
+      @apply flex flex-col w-full mb-4 p-4 border border-gray-300 rounded-lg shadow-sm;
+
+      .card-row {
+        @apply flex justify-between mb-2;
+
+        .label {
+          @apply font-bold;
+        }
+
+        .value {
+          @apply w-[70%] inline-block overflow-hidden whitespace-nowrap text-ellipsis;
+        }
+      }
+    }
+  }
+
+  .empty-content {
+    @apply flex flex-1 max-h-160 min-h-75 justify-center items-center flex-col font-bold text-2xl;
+  }
