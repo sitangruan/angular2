@@ -1,27 +1,27 @@
 <div class="user-list-container">
   <div class="header-row">
-    <div class="col-header col-name-header">
+    <div class="col-header col-name-header" (click)="setSorting('name')">
       Name
     </div>
-    <div class="col-header col-company-header">
+    <div class="col-header col-company-header" (click)="setSorting('fullCompanyInfo')">
       Company
     </div>
-    <div class="col-header col-email-header">
+    <div class="col-header col-email-header" (click)="setSorting('email')">
       Email
     </div>
-    <div class="col-header col-website-header">
+    <div class="col-header col-website-header" (click)="setSorting('website')">
       Website
     </div>
-    <div class="col-header col-phone-header">
+    <div class="col-header col-phone-header" (click)="setSorting('phone')">
       Phone
     </div>
-    <div class="col-header col-address-header">
+    <div class="col-header col-address-header" (click)="setSorting('fullAddressInfo')">
       Address
     </div>
   </div>
   <div class="solid-rows-container">
-    @if (users && users.length > 0) {
-      @for (user of users; track $index) {
+    @if (sortedFullUserInfos && sortedFullUserInfos.length > 0) {
+      @for (user of sortedFullUserInfos; track $index) {
         <div class="row" [ngClass]="{ 'odd-row': $index % 2 == 1 }">
           <div class="col-data col-name-data">
             {{ user.name }}
@@ -51,8 +51,8 @@
   </div>
 </div>
 <div class="user-list-container-mobile">
-  @if (users && users.length > 0) {
-    @for (user of users; track $index) {
+  @if (sortedFullUserInfos && sortedFullUserInfos.length > 0) {
+    @for (user of sortedFullUserInfos; track $index) {
       <div class="mobile-card" [ngClass]="{ 'odd-row': $index % 2 == 1 }">
         <div class="card-row">
           <div class="label">Name:</div>
@@ -60,7 +60,7 @@
         </div>
         <div class="card-row">
           <div class="label">Company:</div>
-          <div class="value">{{ user.company.name }}</div>
+          <div class="value">{{ user.fullCompanyInfo }}</div>
         </div>
         <div class="card-row">
           <div class="label">Email:</div>
@@ -77,7 +77,7 @@
         <div class="card-row">
           <div class="label">Address:</div>
           <div class="value">
-            {{ user.address.street }}, {{ user.address.suite }}, {{ user.address.city }}, {{ user.address.zipcode }}
+            {{ user.fullAddressInfo }}
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
 export type SortingInfo = {
   sortBy: string;
-  sortOrder: 'asc' | 'desc';
+  sortOrder: 'asc' | 'desc' | undefined;
 };

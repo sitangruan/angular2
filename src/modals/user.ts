@@ -25,3 +25,8 @@ export interface Company {
   catchPhrase: string;
   bs: string;
 }
+
+export interface FullUserInfo extends User {
+  fullCompanyInfo: string;
+  fullAddressInfo: string;
+}
