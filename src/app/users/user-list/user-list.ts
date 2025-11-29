@@ -21,6 +21,14 @@ export class UserList {
   private usersService = inject(UsersService);
   private spinnerService = inject(SpinnerService);
 
+  get currentSortField(): string {
+    return this.usersService.sortInfo.sortBy;
+  }
+
+  get isSortAscending(): boolean {
+    return this.usersService.sortInfo.sortOrder === 'asc';
+  }
+
   get sortedFullUserInfos(): FullUserInfo[] {
     if (!this.fullUsersInfos || this.fullUsersInfos.length === 0) {
       return Array<FullUserInfo>();

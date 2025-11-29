@@ -1,22 +1,76 @@
 <div class="user-list-container">
   <div class="header-row">
     <div class="col-header col-name-header" (click)="setSorting('name')">
-      Name
+      <div class="header-text">Name</div>
+      @if (currentSortField === 'name') {
+        <div class="sort-indicator" *ngIf="currentSortField === 'name'">
+          @if (isSortAscending) {
+            <span>&#9650;</span>
+          } @else {
+            <span>&#9660;</span>
+          }
+        </div>
+      }
     </div>
     <div class="col-header col-company-header" (click)="setSorting('fullCompanyInfo')">
-      Company
+      <div class="header-text">Company</div>
+      @if (currentSortField === 'fullCompanyInfo') {
+        <div class="sort-indicator" *ngIf="currentSortField === 'fullCompanyInfo'">
+          @if (isSortAscending) {
+            <span>&#9650;</span>
+          } @else {
+            <span>&#9660;</span>
+          }
+        </div>
+      }
     </div>
     <div class="col-header col-email-header" (click)="setSorting('email')">
-      Email
+      <div class="header-text">Email</div>
+      @if (currentSortField === 'email') {
+        <div class="sort-indicator" *ngIf="currentSortField === 'email'">
+          @if (isSortAscending) {
+            <span>&#9650;</span>
+          } @else {
+            <span>&#9660;</span>
+          }
+        </div>
+      }
     </div>
     <div class="col-header col-website-header" (click)="setSorting('website')">
-      Website
+      <div class="header-text">Website</div>
+      @if (currentSortField === 'website') {
+        <div class="sort-indicator" *ngIf="currentSortField === 'website'">
+          @if (isSortAscending) {
+            <span>&#9650;</span>
+          } @else {
+            <span>&#9660;</span>
+          }
+        </div>
+      }
     </div>
     <div class="col-header col-phone-header" (click)="setSorting('phone')">
-      Phone
+      <div class="header-text">Phone</div>
+      @if (currentSortField === 'phone') {
+        <div class="sort-indicator" *ngIf="currentSortField === 'phone'">
+          @if (isSortAscending) {
+            <span>&#9650;</span>
+          } @else {
+            <span>&#9660;</span>
+          }
+        </div>
+      }
     </div>
     <div class="col-header col-address-header" (click)="setSorting('fullAddressInfo')">
-      Address
+      <div class="header-text">Address</div>
+      @if (currentSortField === 'fullAddressInfo') {
+        <div class="sort-indicator" *ngIf="currentSortField === 'fullAddressInfo'">
+          @if (isSortAscending) {
+            <span>&#9650;</span>
+          } @else {
+            <span>&#9660;</span>
+          }
+        </div>
+      }
     </div>
   </div>
   <div class="solid-rows-container">
@@ -24,7 +78,7 @@
       @for (user of sortedFullUserInfos; track $index) {
         <div class="row" [ngClass]="{ 'odd-row': $index % 2 == 1 }">
           <div class="col-data col-name-data">
-            {{ user.name }}
+            <span class="goto-link" (click)="gotoUserDetail(user.id)">{{ user.name }}</span>
           </div>
           <div class="col-data col-company-data">
             {{ user.company.name }}

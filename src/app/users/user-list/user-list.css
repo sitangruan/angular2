@@ -26,19 +26,6 @@ button {
       .col-header {
         @apply flex justify-center items-center cursor-pointer bg-gray-200 text-base;
 
-        .empty-icon {
-          @apply w-4 h-4 ml-3;
-        }
-
-        .sort-icon {
-          @apply flex w-4 h-4 ml-3 bg-cover;
-          background-image: url('/public/images/sorting.png');
-        }
-
-        .desc {
-          @apply rotate-[180deg];
-        }
-
         .header-text {
           @apply font-bold;
         }
