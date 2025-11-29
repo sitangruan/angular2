@@ -1,0 +1,6 @@
+@import 'tailwindcss';
+
+:host {
+  @apply block w-full h-full flex justify-center items-center text-blue-500 font-bold text-6xl p-4;
+}
+
