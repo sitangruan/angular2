@@ -22,12 +22,12 @@ export class UserDetail implements OnInit {
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params => {
+    this.route.paramMap.subscribe(async params => {
       this.userId = Number(params.get('id')); // 'id' is the name of the route parameter
 
       if (this.userId && this.userId > 0) {
         this.spinnerService.showSpinner();
-        syncDelay(1000);
+        await delay(1000);
         this.usersService.getUserById(this.userId).subscribe({
           next: (user: User) => {
             this.userInfo = user;
