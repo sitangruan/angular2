@@ -1,7 +1,7 @@
   @import "tailwindcss";
 
 :host  {
-  @apply flex md:shrink-[0.3] flex-col max-md:flex-row max-md:w-full bg-gray-100 md:max-w-50 md:w-[10%] shadow-[0px_2px_6px_0px_rgba(60,_73,_112,_0.25)];
+  @apply flex md:shrink-[0.2] flex-col max-md:flex-row max-md:w-full bg-gray-100 md:max-w-50 md:w-[10%] shadow-[0px_2px_6px_0px_rgba(60,_73,_112,_0.25)];
 
   a {
     @apply no-underline;

@@ -45,4 +45,8 @@ export class UserDetail implements OnInit {
       }
     });
   }
+
+  gotoList() {
+    this.router.navigate(['/users']);
+  }
 }

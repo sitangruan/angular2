@@ -1,5 +1,22 @@
 @import 'tailwindcss';
 
 :host {
-  @apply block w-full h-full p-4 flex justify-center items-center text-5xl font-bold text-green-500;
+  @apply flex flex-col w-full h-full p-4;
 }
+
+  .user-details-container {
+    @apply flex flex-col items-center w-full h-full p-4;
+
+    .top-row {
+      @apply flex items-center w-full mb-4 shrink-0;
+
+      .back-link {
+        @apply text-blue-500 hover:underline cursor-pointer flex items-center text-xl;
+
+        .icon {
+          @apply flex w-6 h-6 mr-2 bg-cover;
+          background-image: url('../../../assets/images/backArrow.png');
+        }
+      }
+    }
+  }
