@@ -70,7 +70,9 @@ export class UserList {
   ngOnInit() {
     this.spinnerService.showSpinner();
     this.usersService.getUsers().subscribe(async (users) => {
-      await delay(1000);
+      if (this.usersService.willForceRefreshCache) {
+        await delay(1000);
+      }
       this.users =  [...users, ...users, ...users, ...users, ...users, ...users]; // Duplicate for testing scroll
       this.fullUsersInfos = this.users.map(user => {
         const address = `${user.address.street}, ${user.address.suite}, ${user.address.city}, ${user.address.zipcode}`;

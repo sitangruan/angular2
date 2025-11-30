@@ -1,11 +1,10 @@
+import type { SortingInfo } from "../modals/SortingInfo";
+import type { NavigationLink } from "../modals/NavigationLink";
+import { userGuard } from "../app/guards/userGuard";
+
 export const linkedInUrl = 'https://www.linkedin.com/in/sitang-ruan/';
 export const sourceCodesUrl = 'https://github.com/sitangruan/angular2';
 export const sitangImagePath = '/images/sitangCircle.png';
-
-import type { SortingInfo } from "../modals/SortingInfo";
-import type { NavigationLink } from "../modals/NavigationLink";
-
-import { userGuard } from "../app/guards/userGuard";
 
 export const routeList = [
   {
@@ -66,3 +65,5 @@ export const defaultUsersSortingInfo: SortingInfo = {
   sortBy: 'name',
   sortOrder: 'asc',
 };
+
+export const maxUsersCacheAgeInMs = 5 * 60 * 1000; // 5 minutes
