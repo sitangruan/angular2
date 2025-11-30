@@ -1,5 +1,12 @@
 export const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
+export const syncDelay = (duration: number): void => {
+  const maxDuration = 20000;
+  const myDuration = duration < maxDuration ? duration : maxDuration;
+  const now = new Date().getTime();
+  while (new Date().getTime() < now + myDuration) { /* Do nothing */ };
+}
+
 export const compareWrapper = (fieldName: string, isAsc = true): ((a: any, b: any) => number) => {
   const innerCompare = (a: any, b: any): number => {
   const biggerValue = isAsc ? 1 : -1;

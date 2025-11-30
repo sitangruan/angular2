@@ -5,7 +5,14 @@ export const sitangImagePath = '/images/sitangCircle.png';
 import type { SortingInfo } from "../modals/SortingInfo";
 import type { NavigationLink } from "../modals/NavigationLink";
 
+import { userGuard } from "../app/guards/userGuard";
+
 export const routeList = [
+  {
+    id: 0,
+    route: '',
+    redirectTo: 'users',
+  },
   {
     id: 1,
     displayName: "Todos",
@@ -42,15 +49,7 @@ export const routeList = [
         parentRoute: "users",
         isDefaultLink: false,
         loadComponent: () => import('../app/users/user-detail/user-detail').then(m => m.UserDetail),
-        canActivate: (to: { params: { id: number } }) => {
-          if (!Number.isInteger(Number(to.params?.id)) || !(to.params?.id > 0)) {
-            alert("Invalid user ID. Please enter a valid integer greater than 0.");
-            return false;
-          }
-
-          // If the id is a valid integer, allow navigation
-          return true; // Allow navigation
-        }
+        canActivate: userGuard,
       } as NavigationLink,
     ],
   },

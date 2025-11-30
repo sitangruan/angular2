@@ -1,5 +1,7 @@
 @for (r of routeList; track r.id) {
-  <a [routerLink]="r.route" class="menuItem" routerLinkActive="isFocused">
-    {{ r.displayName }}
-  </a>
+  @if (!r.redirectTo) {
+    <a [routerLink]="r.route" class="menuItem" routerLinkActive="isFocused">
+      {{ r.displayName }}
+    </a>
+  }
 }
