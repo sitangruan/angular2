@@ -13,7 +13,7 @@
       .back-link {
         @apply text-blue-500 hover:underline cursor-pointer flex items-center text-xl;
 
-        .icon {
+        .back-icon {
           @apply flex w-6 h-6 mr-2 bg-cover;
           background-image: url('../../../assets/images/backArrow.png');
         }
