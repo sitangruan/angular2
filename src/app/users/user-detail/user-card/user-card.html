@@ -1,0 +1,115 @@
+@if (!userInfo()) {
+      <p>Loading user details...</p>
+    } @else {
+      <div class="user-detail-card">
+        <div class="card-header">User Details</div>
+        <form [formGroup]="userDetailForm" class="user-detail-form" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <div class="form-group-row">
+              <label for="name">Name:</label>
+              <input id="name" formControlName="name" />
+            </div>
+            @if (userDetailForm.get('name')?.invalid && userDetailForm.get('name')?.touched) {
+              <div class="validation-error">
+                Name is required and must be at least 2 characters.
+              </div>
+            }
+          </div>
+          <div class="form-group">
+            <div class="form-group-row">
+              <label for="username">Username:</label>
+              <input id="username" formControlName="username" />
+            </div>
+            @if (userDetailForm.get('username')?.invalid && userDetailForm.get('username')?.touched) {
+              <div class="validation-error">
+                Username is required and must be at least 2 characters.
+              </div>
+            }
+          </div>
+          <div class="form-group">
+            <div class="form-group-row">
+              <label for="email">Email:</label>
+              <input id="email" formControlName="email" />
+            </div>
+            @if (userDetailForm.get('email')?.invalid && userDetailForm.get('email')?.touched) {
+              <div class="validation-error">
+                Please enter a valid email address.
+              </div>
+            }
+          </div>
+          <div class="form-group">
+            <div class="form-group-row">
+              <label for="phone">Phone:</label>
+              <input id="phone" formControlName="phone" />
+            </div>
+            @if (userDetailForm.get('phone')?.invalid && userDetailForm.get('phone')?.touched) {
+              <div class="validation-error">
+                Please enter a valid phone number.
+              </div>
+            }
+          </div>
+          <div class="form-group">
+            <div class="form-group-row">
+              <label for="website">Website:</label>
+              <input id="website" formControlName="website" />
+            </div>
+            @if (userDetailForm.get('website')?.invalid && userDetailForm.get('website')?.touched) {
+              <div class="validation-error">
+                Please enter a valid URL.
+              </div>
+            }
+          </div>
+          <div class="form-group">
+            <div class="form-group-row">
+              <label for="company">Company:</label>
+              <input id="company" formControlName="company" />
+            </div>
+            @if (userDetailForm.get('company')?.invalid && userDetailForm.get('company')?.touched) {
+              <div class="validation-error">
+                Company is required.
+              </div>
+            }
+          </div>
+          <div class="form-group">
+            <div class="form-group-row">
+              <label for="street">Street:</label>
+              <input id="street" formControlName="street" />
+            </div>
+            @if (userDetailForm.get('street')?.invalid && userDetailForm.get('street')?.touched) {
+              <div class="validation-error">
+                Street is required.
+              </div>
+            }
+          </div>
+          <div class="form-group">
+            <div class="form-group-row">
+              <label for="suite">Suite:</label>
+              <input id="suite" formControlName="suite" />
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-group-row">
+              <label for="city">City:</label>
+              <input id="city" formControlName="city" />
+            </div>
+            @if (userDetailForm.get('city')?.invalid && userDetailForm.get('city')?.touched) {
+              <div class="validation-error">
+                City is required.
+              </div>
+            }
+          </div>
+          <div class="form-group">
+            <div class="form-group-row">
+              <label for="zipcode">Zipcode:</label>
+              <input id="zipcode" formControlName="zipcode" />
+            </div>
+            @if (userDetailForm.get('zipcode')?.invalid && userDetailForm.get('zipcode')?.touched) {
+              <div class="validation-error">
+                Please enter a valid zipcode.
+              </div>
+            }
+          </div>
+          <button type="submit" class="save-button" [disabled]="userDetailForm.invalid">Save</button>
+        </form>
+      </div>
+    }
