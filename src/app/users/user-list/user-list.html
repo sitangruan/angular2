@@ -110,7 +110,9 @@
       <div class="mobile-card" [ngClass]="{ 'odd-row': $index % 2 == 1 }">
         <div class="card-row">
           <div class="label">Name:</div>
-          <div class="value"><span class="goto-link" (click)="gotoUserDetail(user.id)">{{ user.name }}</span></div>
+          <div class="value">
+            <div appFancy="#A8E0DF" class="goto-link" (click)="gotoUserDetail(user.id)">{{ user.name }}</div>
+          </div>
         </div>
         <div class="card-row">
           <div class="label">Company:</div>
