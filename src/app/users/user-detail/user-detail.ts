@@ -7,6 +7,7 @@ import { SpinnerService } from '../../../services/spinner-service';
 import { delay } from '../../../common/utils';
 import { FormGroup, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserCard } from "./user-card/user-card";
+import { fakeNetworkDelayInMs } from '../../../common/constants';
 
 @Component({
   selector: 'app-user-detail',
@@ -30,7 +31,7 @@ export class UserDetail implements OnInit {
 
       if (this.userId && this.userId > 0) {
         this.spinnerService.showSpinner();
-        await delay(1000);
+        await delay(fakeNetworkDelayInMs);
         this.usersService.getUserById(this.userId).subscribe({
           next: (user: User) => {
             this.userInfo = user;

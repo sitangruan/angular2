@@ -6,6 +6,7 @@ import { FullUserInfo, User } from '../../../modals/user';
 import { SpinnerService } from '../../../services/spinner-service';
 import { compareWrapper, delay } from '../../../common/utils';
 import { Fancy } from "../../../directives/fancy";
+import { fakeNetworkDelayInMs } from '../../../common/constants';
 
 @Component({
   selector: 'app-user-list',
@@ -72,7 +73,7 @@ export class UserList {
     this.spinnerService.showSpinner();
     this.usersService.getUsers().subscribe(async (users) => {
       if (this.usersService.willForceRefreshCache) {
-        await delay(1000);
+        await delay(fakeNetworkDelayInMs);
       }
       this.users =  [...users, ...users, ...users, ...users, ...users, ...users]; // Duplicate for testing scroll
       this.fullUsersInfos = this.users.map(user => {

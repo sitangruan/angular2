@@ -67,3 +67,4 @@ export const defaultUsersSortingInfo: SortingInfo = {
 };
 
 export const maxUsersCacheAgeInMs = 5 * 60 * 1000; // 5 minutes
+export const fakeNetworkDelayInMs = 500; // 0.5 second
