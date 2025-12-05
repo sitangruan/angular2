@@ -9,7 +9,7 @@ button {
 }
 
   a, .goto-link {
-    @apply text-blue-500 hover:underline cursor-pointer;
+    @apply text-blue-500 hover:underline cursor-pointer overflow-hidden whitespace-nowrap text-ellipsis;
   }
 
   .ellipsis-text {
@@ -59,10 +59,6 @@ button {
 
         .col-data {
           @apply flex h-8 items-center pl-4 inline-block overflow-hidden whitespace-nowrap text-ellipsis;
-
-          .ellipsis-text {
-            @apply inline-block overflow-hidden whitespace-nowrap text-ellipsis;
-          }
         }
       }
 

@@ -5,10 +5,11 @@ import { UsersService } from '../../../services/users-service';
 import { FullUserInfo, User } from '../../../modals/user';
 import { SpinnerService } from '../../../services/spinner-service';
 import { compareWrapper, delay } from '../../../common/utils';
+import { Fancy } from "../../../directives/fancy";
 
 @Component({
   selector: 'app-user-list',
-  imports: [CommonModule],
+  imports: [CommonModule, Fancy],
   templateUrl: './user-list.html',
   styleUrl: './user-list.css',
 })

@@ -78,7 +78,7 @@
       @for (user of sortedFullUserInfos; track $index) {
         <div class="row" [ngClass]="{ 'odd-row': $index % 2 == 1 }">
           <div class="col-data col-name-data">
-            <span class="goto-link" (click)="gotoUserDetail(user.id)">{{ user.name }}</span>
+            <div appFancy="#A8E0DF" class="goto-link" (click)="gotoUserDetail(user.id)">{{ user.name }}</div>
           </div>
           <div class="col-data col-company-data">
             {{ user.company.name }}
