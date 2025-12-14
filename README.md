@@ -17,8 +17,10 @@ run "ng serve" in the terminal.
 
 To build and run the docker image:
 In root folder run the two commands to create the image and then run the container:
-   docker compose build --no-cahe
-   docker compose up
+
+docker compose build --no-cahe
+docker compose up
+
 After the contaienr is running, you can access the page via http://localhost:8080 where 8080 is mapped host port number. 
 You can change the ports mapping in the docker-compose.yml file.
 
