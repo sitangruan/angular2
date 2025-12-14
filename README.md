@@ -9,14 +9,19 @@ This is demo project developed to prove the learning level of Angular. It covers
  7. Reactive form, validators.
  8. Angular service, denpendency injection.
  9. HttpClient, observable
+ 10. Docker deployment
 
 
 To run on your local:
 run "ng serve" in the terminal.
 
+To build and run the docker image:
+In root folder run the two commands to create the image and then run the container:
+   docker compose build --no-cahe
+   docker compose up
+
 It is using Tailwind css to support easy responsive layout. 
 Initially it was using less for stylesheet format but then was changed to css because less has some conflict with Tailwind in new versions.
-
 
 The source codes url is:
 https://github.com/sitangruan/angular2
